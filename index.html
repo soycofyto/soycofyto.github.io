@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hub Soy Cofyto</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="layout-wrapper">
+      <div class="side-column">
+        <div class="visual-img img-left"></div>
+      </div>
+
+      <div class="main-column">
+        <header class="profile-header">
+          <h1>Cesar Onofre</h1>
+          <p>@SoyCofyto</p>
+        </header>
+
+        <div class="main-container-grid">
+          <div class="category-section photo-theme">
+            <button class="category-header" onclick="toggleCategory(this)">
+              <span
+                ><i
+                  class="fa-solid fa-camera-retro"
+                  style="margin-right: 10px"
+                ></i>
+                Fotografía</span
+              >
+              <i class="fa-solid fa-chevron-down icon-indicator"></i>
+            </button>
+            <div class="category-content">
+              <a href="#" class="btn btn-insta">
+                <span><i class="fa-brands fa-instagram"></i> Instagram</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#" class="btn btn-gallery">
+                <span><i class="fa-solid fa-image"></i> Portfolio</span>
+                <small>VISUAL</small>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-section tech-theme">
+            <button class="category-header" onclick="toggleCategory(this)">
+              <span
+                ><i class="fa-solid fa-terminal" style="margin-right: 10px"></i>
+                Tecnología</span
+              >
+              <i class="fa-solid fa-chevron-down icon-indicator"></i>
+            </button>
+            <div class="category-content">
+              <a href="#" class="btn btn-github">
+                <span><i class="fa-brands fa-github"></i> GitHub</span>
+                <i class="fa-solid fa-code-branch"></i>
+              </a>
+              <a href="#" class="btn btn-dev">
+                <span><i class="fa-solid fa-laptop-code"></i> Proyectos</span>
+                <small>DEV</small>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-section gamer-theme">
+            <button class="category-header" onclick="toggleCategory(this)">
+              <span
+                ><i class="fa-solid fa-gamepad" style="margin-right: 10px"></i>
+                Gamer</span
+              >
+              <i class="fa-solid fa-chevron-down icon-indicator"></i>
+            </button>
+            <div class="category-content">
+              <a href="#" class="btn btn-twitch">
+                <span><i class="fa-brands fa-twitch"></i> Twitch</span>
+                <small
+                  style="
+                    background: red;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    font-size: 9px;
+                  "
+                  >LIVE</small
+                >
+              </a>
+              <a href="#" class="btn btn-discord">
+                <span><i class="fa-brands fa-discord"></i> Comunidad</span>
+                <i class="fa-solid fa-users"></i>
+              </a>
+              <a href="#" class="btn btn-tiktok">
+                <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                <small>Vlogs</small>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-section knowledge-theme">
+            <button class="category-header" onclick="toggleCategory(this)">
+              <span
+                ><i
+                  class="fa-solid fa-lightbulb"
+                  style="margin-right: 10px"
+                ></i>
+                Contacto</span
+              >
+              <i class="fa-solid fa-chevron-down icon-indicator"></i>
+            </button>
+            <div class="category-content">
+              <a href="#" class="btn btn-linkedin">
+                <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+                <small>PRO</small>
+              </a>
+              <a href="#" class="btn btn-youtube">
+                <span><i class="fa-brands fa-youtube"></i>Canal YouTube</span>
+                <small>EDU</small>
+              </a>
+              <a href="#" class="btn btn-blog">
+                <span><i class="fa-solid fa-pen-nib"></i> Blog</span>
+                <i class="fa-solid fa-book-open"></i>
+              </a>
+              <div class="divider"><span>Hablemos</span></div>
+
+              <a href="mailto:tucorreo@ejemplo.com" class="btn btn-mail">
+                <span
+                  ><i
+                    class="fa-solid fa-envelope"
+                    style="margin-right: 10px"
+                  ></i>
+                  Correo</span
+                >
+                <i class="fa-solid fa-paper-plane"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side-column img-right-container">
+        <div class="visual-img img-right"></div>
+      </div>
+    </div>
+
+    <script>
+      function toggleCategory(button) {
+        // Solo activar acordeón si estamos en móvil/tablet
+        if (window.innerWidth <= 1024) {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector(".icon-indicator");
+          content.classList.toggle("open");
+
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.style.transform = "rotate(0deg)";
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = "rotate(180deg)";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

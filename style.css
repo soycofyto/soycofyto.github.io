@@ -1,0 +1,267 @@
+/* --- VARIABLES Y BASE --- */
+        :root {
+            --bg-color: #0a0a0a; /* Negro profundo */
+            --card-bg: #151515;
+            --text-color: #ffffff;
+            --accent-green: #00ff41;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* --- LAYOUT PRINCIPAL (3 Columnas) --- */
+        .layout-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1600px; /* Ancho máximo amplio */
+            justify-content: center; /* Centrado si las pantallas son gigantes */
+            align-items: flex-start;
+        }
+
+        /* --- COLUMNAS LATERALES (IMÁGENES) --- */
+        .side-column {
+            width: 350px; /* Espacio generoso para las imágenes */
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo específico de las imágenes */
+        .visual-img {
+            width: 100%;
+            height: 80%; /* No ocupan el 100% para no tocar bordes */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain; /* CLAVE: 'contain' evita que se recorten */
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1)); /* Sutil brillo */
+            border-radius: 20px;
+        }
+
+        /* Logo Izquierda */
+        .img-left {
+            /* REEMPLAZA AQUÍ CON TU ARCHIVO REAL: 'icon.jpg' */
+            background-image: url('icon.png'); 
+        }
+
+        /* Dragón Derecha */
+        .img-right {
+            /* REEMPLAZA AQUÍ CON TU ARCHIVO REAL: 'cof.jpg' */
+            background-image: url('cof.png');
+        }
+
+        /* --- COLUMNA CENTRAL (CONTENIDO) --- */
+        .main-column {
+            flex: 1; /* Ocupa el espacio restante */
+            max-width: 800px; /* Ancho máximo de los botones */
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            z-index: 10;
+        }
+
+        /* --- HEADER DEL PERFIL --- */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 10px;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .profile-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        .profile-header p {
+            margin: 10px 0 0;
+            font-size: 1.1rem;
+            color: var(--accent-green);
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 255, 65, 0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+        }
+
+        /* --- ESTILOS DE ACORDEÓN Y BOTONES (Lo que ya tenías) --- */
+        .category-section {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: transform 0.2s ease;
+        }
+        
+        .category-header {
+            width: 100%;
+            padding: 20px;
+            background: none;
+            border: none;
+            color: #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: #0f0f0f;
+            padding: 0 20px;
+        }
+        .category-content.open { padding-bottom: 20px; }
+
+        /* Botones Generales */
+        .btn {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 15px; margin-top: 10px; text-decoration: none;
+            color: white; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        /* Estilos Temáticos */
+        .photo-theme .category-header { border-left: 4px solid #e1306c; }
+        .tech-theme .category-header { border-left: 4px solid #00ff41; }
+        .gamer-theme .category-header { border-left: 4px solid #9146FF; }
+        .knowledge-theme .category-header { border-left: 4px solid #f1c40f; }
+
+        /* Botones Específicos */
+        .btn-insta { background: #222; border: 1px solid #333; }
+        .btn-insta:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); border-color: transparent; }
+        
+        .btn-gallery { border: 1px dashed #666; }
+        .btn-gallery:hover { background: #222; border-style: solid; border-color: white; letter-spacing: 2px;}
+
+        .btn-github { background: #161b22; border: 1px solid #30363d; }
+        .btn-github:hover { border-color: #00ff41; color: #00ff41; }
+      
+        .btn-dev { background-color: transparent; color: #00ff41; border: 1px dotted #00ff41; }
+        .btn-dev:hover { background: rgba(0,255,65,0.1); border-style: solid; transform: translateX(5px);}
+        .btn-dev small { background: #00ff41; color: black; padding: 2px 5px; font-weight: bold; border-radius: 2px; }
+
+        .btn-twitch { background: #6441a5; }
+        .btn-twitch:hover { background: #9146FF; box-shadow: 0 0 15px #9146FF; }
+
+        .btn-discord { background: #5865F2; }
+        .btn-tiktok { background: #000; border: 1px solid #333; }
+        .btn-tiktok:hover { box-shadow: -2px -2px 0 #00f2ea, 2px 2px 0 #ff0050; border-color: white; }
+
+        .btn-linkedin { background: #0077b5; }
+        .btn-linkedin:hover { background: #005e93; }
+        .btn-youtube { background: #2c2c2c; border-left: 3px solid red; }
+        .btn-youtube:hover { background: red; }
+        .btn-blog { background: #ececec; color: #333 !important; font-family: serif; }
+        
+      .btn-blog:hover {
+        background-color: #fff;
+        box-shadow: 5px 5px 0px #888; /* Sombra sólida */
+        transform: translate(-2px, -2px);
+      }
+
+      .btn-blog i {
+        color: #333;
+      }
+        .btn-mail { border: 1px solid #444; } .btn-mail:hover { background: #333; letter-spacing: 1px;border-color: white;}
+
+        /* Icono indicador del acordeón */
+        .icon-indicator { transition: transform 0.3s; font-size: 0.8rem; opacity: 0.5; }
+
+        /* --- MEDIA QUERIES (RESPONSIVE) --- */
+        
+        /* PC: Abrir acordeones y ocultar flechas */
+        @media (min-width: 1025px) {
+            .category-content { max-height: none !important; padding-bottom: 20px; }
+            .icon-indicator { display: none; }
+            .category-header { cursor: default; }
+            
+            /* En PC hacemos grid de 2x2 para las categorías dentro de la columna central */
+            .main-container-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* TABLET & MÓVIL: Ajustes drásticos */
+        @media (max-width: 1024px) {
+            .layout-wrapper {
+                flex-direction: column; /* Todo vertical */
+                align-items: center;
+            }
+
+            .side-column {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 0;
+                margin-bottom: 20px;
+            }
+
+            /* LOGO (Izquierda en PC -> Arriba en Móvil) */
+            .img-left {
+                height: 250px; /* Altura controlada para el móvil */
+                background-position: center bottom; /* Que se vea la parte de abajo del logo */
+                margin-top: 20px;
+            }
+
+            /* DRAGÓN (Derecha en PC -> Oculto en Móvil) */
+            .img-right {
+                display: none; /* REGLA TUYA: Ocultar una imagen en móvil */
+            }
+
+            .main-column {
+                width: 100%;
+                max-width: 100%;
+                padding: 20px;
+                margin-top: -20px; /* Subir un poco el contenido */
+            }
+        }
+        /* Separador sutil para contacto */
+      .divider {
+        height: 1px;
+        background: #333;
+        margin: 15px 0;
+        position: relative;
+      }
+      .divider span {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1e1e1e; /* Mismo color del fondo de la tarjeta */
+        padding: 0 10px;
+        font-size: 10px;
+        color: #777;
+        text-transform: uppercase;
+      }
