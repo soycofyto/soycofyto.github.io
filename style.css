@@ -265,3 +265,69 @@
         color: #777;
         text-transform: uppercase;
       }
+      /* --- NUEVOS ESTILOS: Behance, Pixieset y WhatsApp --- */
+
+/* BEHANCE: Azul eléctrico característico */
+.btn-behance {
+    background: #0057ff;
+    border: 1px solid #0046cc;
+}
+.btn-behance:hover {
+    background: #0046cc;
+    box-shadow: 0 0 15px rgba(0, 87, 255, 0.4);
+    transform: translateX(5px);
+}
+
+/* PIXIESET: Estilo "Premium Client" (Dorado/Elegante) */
+.btn-pixieset {
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+    border: 1px solid #c5a059; /* Dorado tenue */
+    color: #e0c080 !important;
+}
+.btn-pixieset small {
+    background: #c5a059;
+    color: #000;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.btn-pixieset:hover {
+    background: #2a2a2a;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+    border-color: #ffe08a; /* Dorado brillante */
+}
+
+/* WHATSAPP: Verde vibrante de contacto */
+.btn-whatsapp {
+    background-color: #25D366;
+    border: 1px solid #1ebe57;
+    font-weight: 800; /* Texto más grueso */
+}
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    transform: scale(1.02); /* Pequeño pop */
+}
+/* --- PLAY STORE: Estilo Developer --- */
+.btn-playstore {
+    background: #000; /* Fondo negro puro */
+    border: 1px solid #3DDC84; /* Verde Android Oficial */
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo verde al pasar el mouse */
+.btn-playstore:hover {
+    box-shadow: 0 0 15px rgba(61, 220, 132, 0.4); 
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Pequeño detalle: Icono de Play con colores reales */
+.btn-playstore i {
+    background: linear-gradient(to bottom right, #4285F4, #34A853, #FBBC05, #EA4335);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem; /* Un poco más grande el icono */
+}
